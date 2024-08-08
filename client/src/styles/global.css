@@ -1,0 +1,14 @@
+.notFound {
+  min-height: 100dvh;
+  text-align: center;
+  display: grid;
+  place-content: center;
+}
+
+.notFound h1 {
+  font-size: 130px;
+}
+
+.notFound p {
+  font-size: 50px;
+}
