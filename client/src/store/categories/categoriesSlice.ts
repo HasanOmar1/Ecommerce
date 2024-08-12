@@ -1,16 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import actGetCategories from "./act/actGetCategories";
-
-type recordsType = {
-  id: number;
-  title: string;
-  prefix: string;
-  img: string;
-};
+import { TLoading } from "@customTypes/shared";
+import { TCategory } from "@customTypes/category";
 
 type TCategoriesState = {
-  records: recordsType[];
-  loading: "idle" | "pending" | "succeeded" | "failed";
+  records: TCategory[];
+  loading: TLoading;
   error: string | null;
 };
 
