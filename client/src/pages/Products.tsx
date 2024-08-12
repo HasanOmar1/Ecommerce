@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Product } from "@components/ecommerce/index";
 import { useAppDispatch, useAppSelector } from "@store/hook";
 import {
@@ -7,6 +7,8 @@ import {
 } from "@store/products/productsSlice";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Loading } from "@components/feedback";
+import { GridList } from "@components/common";
 
 const Products = () => {
   const params = useParams();
@@ -25,22 +27,12 @@ const Products = () => {
 
   return (
     <Container>
-      <Row>
-        {records.length > 0
-          ? records.map((record) => {
-              return (
-                <Col
-                  xs={6}
-                  md={3}
-                  key={record.id}
-                  className="d-flex justify-content-center mb-5 mt-2"
-                >
-                  <Product {...record} />
-                </Col>
-              );
-            })
-          : "There are no categories"}
-      </Row>
+      <Loading error={error} status={loading}>
+        <GridList
+          records={records}
+          renderItem={(record) => <Product {...record} />}
+        />
+      </Loading>
     </Container>
   );
 };
