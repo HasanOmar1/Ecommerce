@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import { Product } from "@components/ecommerce/index";
-import { useAppDispatch, useAppSelector } from "@store/hook";
+import { useAppDispatch, useAppSelector } from "@store/hooks";
 import {
   actGetProductsByCatPrefix,
   productsCleanUp,
