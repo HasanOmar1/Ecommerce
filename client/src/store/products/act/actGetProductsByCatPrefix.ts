@@ -11,7 +11,7 @@ const actGetProductsByCatPrefix = createAsyncThunk(
 
     try {
       const { data } = await axios.get<TResponse>(
-        `${import.meta.env.VITE_SERVER_URL}/products?cat_prefix=${prefix}`
+        `/products?cat_prefix=${prefix}`
       );
       return data;
     } catch (error) {
